@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const addBookPayload = require('../resources/payloads/add_book.json');
 const expectedAddBookResponse = require('../resources/responses/add_book_response.json');
-const expectedGetBookResponse = require('../resources/responses/get_book_response.json');
+const expectedGetAddedBookResponse = require('../resources/responses/get_added_book_response.json');
 const { addBookUrl, getAddedBooksByAuthor } = require('../resources/variables/urls');
 
 test('Adds a book and verifies it by author', async ({ request }) => {
@@ -14,5 +14,5 @@ test('Adds a book and verifies it by author', async ({ request }) => {
 	const getResponse = await request.get(getAddedBooksByAuthor);
 
 	expect(getResponse.status()).toBe(200);
-	expect(await getResponse.json()).toEqual(expectedGetBookResponse);
+	expect(await getResponse.json()).toEqual(expectedGetAddedBookResponse);
 });
