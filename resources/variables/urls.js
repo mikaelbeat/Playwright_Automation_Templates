@@ -1,7 +1,12 @@
 
-const getBooksByAuthorUrl = 'http://216.10.245.166/Library/GetBook.php?AuthorName=MikaelBeat';
-const addBookUrl = 'http://216.10.245.166/Library/Addbook.php';
+const baseUrl = 'http://216.10.245.166/Library/';
 
-const getAddedBooksByAuthor = 'http://216.10.245.166/Library/GetBook.php?AuthorName=Sailor';
+const getBooksByAuthorUrl = `${baseUrl}GetBook.php?AuthorName=MikaelBeat`;
 
-module.exports = { getBooksByAuthorUrl, addBookUrl, getAddedBooksByAuthor };
+const addBookUrl = `${baseUrl}Addbook.php`;
+const getAddedBooksByAuthorUrl = `${baseUrl}GetBook.php?AuthorName=Kokki`;
+const deleteBookUrl = `${baseUrl}DeleteBook.php`;
+const getBookByIdUrl = `${baseUrl}GetBook.php?ID=12121212128`;
+
+
+module.exports = { getBooksByAuthorUrl, addBookUrl, getAddedBooksByAuthorUrl, deleteBookUrl, getBookByIdUrl };
