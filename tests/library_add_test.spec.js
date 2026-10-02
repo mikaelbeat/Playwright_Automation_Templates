@@ -8,7 +8,7 @@ const expectedGetAddedBookResponse = require('../resources/responses/get_added_b
 
 const deleteBookPayload = require('../resources/payloads/post_delete_book_by_id.json');
 const expectedDeleteBookResponse = require('../resources/responses/post_delete_book_response.json');
-const expectedGetBookNotFound = require('../resources/responses/get_book_not_found.json');
+const expectedGetBookNotFound = require('../resources/responses/get_book_not_found_response.json');
 
 
 test('Adds a book and verifies it by author', async ({ request }) => {

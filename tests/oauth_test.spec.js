@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 const { oauthGetTokenUrl, oauthGetCourseDetailsUrl } = require('../resources/variables/urls');
 const oauthFormdata = require('../resources/variables/oauth_formdata.json');
 
-const expectedResponse = require('../resources/responses/get_oauth_courses.json');
+const expectedResponse = require('../resources/responses/get_oauth_courses_response.json');
 
 let accessToken;
 
