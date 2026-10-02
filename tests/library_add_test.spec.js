@@ -19,7 +19,12 @@ test('Adds a book and verifies it by author', async ({ request }) => {
 	expect(await addResponse.json()).toEqual(expectedAddBookResponse);
 
 	// Gets the added book by author and verifies the response
-	const getResponse = await request.get(getAddedBooksByAuthorUrl);
+	const getResponse = await request.get(getAddedBooksByAuthorUrl, {
+		params: {
+			AuthorName: addBookPayload.author,
+		},
+	});
+
 	expect(getResponse.status()).toBe(200);
 	expect(await getResponse.json()).toEqual(expectedGetAddedBookResponse);
 
@@ -29,7 +34,11 @@ test('Adds a book and verifies it by author', async ({ request }) => {
 	expect(await deleteResponse.json()).toEqual(expectedDeleteBookResponse);
 
 	// Verifies the book is deleted and the response
-	const getResponseAfterDelete = await request.get(getBookByIdUrl);
+	const getResponseAfterDelete = await request.get(getBookByIdUrl, {
+		params: {
+			ID: deleteBookPayload.ID,
+		},
+	});
 	expect(getResponseAfterDelete.status()).toBe(404);
 	expect(await getResponseAfterDelete.json()).toEqual(expectedGetBookNotFound);
 
