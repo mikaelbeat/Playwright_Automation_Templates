@@ -1,6 +1,5 @@
 
 // LIBRARY API URLS
-
 const baseUrl = 'http://216.10.245.166/Library/';
 
 const getBooksByAuthorUrl = `${baseUrl}GetBook.php`;
@@ -12,7 +11,6 @@ const getBookByIdUrl = `${baseUrl}GetBook.php`;
 
 
 // OAuth2 API URLS
-
 const oauthGetTokenUrl = 'https://rahulshettyacademy.com/oauthapi/oauth2/resourceOwner/token';
 const oauthGetCourseDetailsUrl = 'https://rahulshettyacademy.com/oauthapi/getCourseDetails';
 
