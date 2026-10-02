@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 const { oauthGetTokenUrl, oauthGetCourseDetailsUrl } = require('../resources/variables/urls');
-const oauthHeaders = require('../resources/variables/oauth_formdata.json');
+const oauthFormdata = require('../resources/variables/oauth_formdata.json');
 
 const expectedResponse = require('../resources/responses/get_oauth_courses.json');
 
@@ -10,7 +10,7 @@ let accessToken;
 test.describe.serial('OAuth API', () => {
 	test('Gets an OAuth access token', async ({ request }) => {
 		const response = await request.post(oauthGetTokenUrl, {
-			form: oauthHeaders,
+			form: oauthFormdata,
 		});
 
 		expect(response.status()).toBe(200);
