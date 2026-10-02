@@ -1,4 +1,3 @@
-
 import { test, expect } from '@playwright/test';
 
 const expectedResponse = require('../resources/responses/get_book_response.json');
